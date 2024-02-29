@@ -29,6 +29,20 @@ paths:
             '*/*':
               schema:
                 type: string
+  /student/getAllStudents:
+    get:
+      tags:
+        - Student Details
+      operationId: getStudents
+      responses:
+        "200":
+          description: OK
+          content:
+            '*/*':
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/Student'
 components:
   schemas:
     Student:
