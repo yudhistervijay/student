@@ -1,0 +1,48 @@
+openapi: 3.0.1
+info:
+  title: OpenAPI definition
+  version: v0
+servers:
+  - url: http://localhost:8080
+    description: Generated server url
+tags:
+  - name: Student Details
+    description: Student Module
+paths:
+  /student/addStudent:
+    post:
+      tags:
+        - Student Details
+      summary: add Student
+      description: use to add the student
+      operationId: save
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/Student'
+        required: true
+      responses:
+        "200":
+          description: OK
+          content:
+            '*/*':
+              schema:
+                type: string
+components:
+  schemas:
+    Student:
+      type: object
+      properties:
+        rollId:
+          type: integer
+          format: int32
+        name:
+          type: string
+        address:
+          type: string
+        branch:
+          type: string
+        fee:
+          type: number
+          format: float

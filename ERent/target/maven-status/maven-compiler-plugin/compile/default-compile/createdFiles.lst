@@ -1,6 +1,6 @@
-com\blogs\student\StudentService.class
-com\blogs\student\StudentController.class
-com\blogs\student\StudentRepo.class
-com\blogs\student\Student.class
-com\blogs\student\StudentServiceImpl.class
+com\blogs\student\repo\StudentRepo.class
+com\blogs\student\entity\Student.class
+com\blogs\student\service\StudentService.class
+com\blogs\student\controller\StudentController.class
 com\blogs\student\StudentApplication.class
+com\blogs\student\service\StudentServiceImpl.class
