@@ -8,10 +8,15 @@ import io.swagger.v3.oas.annotations.tags.Tag;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
+import java.util.List;
+
 @RestController
 @RequestMapping("/student")
 @Tag(name = "Student Details",description = "Student Module")
 public class StudentController {
+
+    @Autowired
+    private StudentService service;
 
     @PostMapping("/addStudent")
     @Operation(summary = "add Student",description ="use to add the student")
@@ -19,20 +24,21 @@ public class StudentController {
     {
         Student e=service.addStudent(student);
         String message=null;
-
         if(e!=null) {
             message="Student data saved successfully in database";
         }
         else {
             message="student data not saved";
         }
-
         return message;
-
     }
 
-    @Autowired
-    private StudentService service;
+    @GetMapping("/getAllStudents")
+    public List<Student> getStudents(){
+        return service.getAllStudents();
+    }
+
+
 
 
 }
