@@ -1,7 +1,7 @@
 # Docker multi-stage build
 
 # 1. Building the App with Maven
-FROM maven:3.8.7-openjdk-17 AS build
+FROM maven:3.8.3-openjdk-17 AS build
 
 ADD . /java-springboot
 WORKDIR /java-springboot
